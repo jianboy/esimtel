@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "568357508073",
+    "project_id": "esimtel-cf402",
+    "storage_bucket": "esimtel-cf402.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568357508073:android:6e941380954cf87eca3178",
+        "android_client_info": {
+          "package_name": "com.esimtel.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568357508073-21gklk8lgfmjjrs3r65l8lr0e6gqp2ea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.esimtel.app",
+            "certificate_hash": "b4da7c08879c45bd61c601fc7ad08e3dcdf617c5"
+          }
+        },
+        {
+          "client_id": "568357508073-8qimn9gimuiq8kslg1vp64qgs6htup9n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.esimtel.app",
+            "certificate_hash": "d6275256e449632da0eec58bf39aa8d3ce575aea"
+          }
+        },
+        {
+          "client_id": "568357508073-m7sop0pa9r59d4gi2f84n6ljac2stfs6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9HIKFrz-VkRl8_96ya7mgZQEA4Vr53VY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568357508073-m7sop0pa9r59d4gi2f84n6ljac2stfs6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "568357508073-3oa218b64mjh994g30aon7ftpb8hjpc4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.diploy.telesim"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

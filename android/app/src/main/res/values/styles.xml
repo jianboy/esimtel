@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+   <style name="stripTheme" parent="Theme.MaterialComponents">
+    <item name="android:windowBackground">?android:colorBackground</item>
+</style>
+
+</resources>

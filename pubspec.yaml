@@ -1,0 +1,96 @@
+name: esimtel
+description: "A new Flutter project."
+publish_to: "none"
+version: 1.0.9
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  cached_network_image: ^3.4.1
+  carousel_slider: ^5.1.1
+  clipboard: ^2.0.2
+  connectivity_plus: ^6.1.5
+  cupertino_icons: ^1.0.8
+  flutter:
+    sdk: flutter
+  flutter_dotenv: ^5.2.1
+  flutter_html: ^3.0.0
+  flutter_local_notifications: ^19.4.0
+  fluttertoast: ^8.2.12
+  geolocator: ^14.0.2
+  image_picker: ^1.1.2
+  lottie: ^3.3.1
+  path_provider: ^2.1.5
+  percent_indicator: ^4.2.5
+  persistent_bottom_nav_bar_v2: ^5.3.1
+  pin_input_text_field: ^4.5.2
+  qr_flutter: ^4.1.0
+  share_plus: ^11.1.0
+  shared_preferences: ^2.3.1
+  sizer: ^3.0.5
+  skeletonizer: ^2.1.0+1
+  timezone: ^0.10.1
+  url_launcher: ^6.3.2
+
+  #payment gateway
+  flutter_cashfree_pg_sdk: ^2.2.9+47
+  flutter_stripe: ^11.5.0
+  razorpay_flutter: ^1.4.0
+  in_app_purchase_android: ^0.4.0 #android
+  in_app_purchase: ^3.2.3
+  in_app_purchase_storekit: ^0.4.4 #ios
+
+  #Firebase
+  firebase_auth: ^6.0.2
+  firebase_core: ^4.0.0
+  firebase_messaging: ^16.0.0
+
+  #state management
+  flutter_bloc: ^9.1.1
+  get: ^4.6.6
+  equatable: ^2.0.7
+
+  #google signin
+  google_sign_in: ^6.3.0
+
+  #connectivity
+  dio: ^5.8.0+1
+
+  #device details
+  device_info_plus: ^11.5.0
+  package_info_plus: ^8.0.0
+
+  #language
+  easy_localization: ^3.0.8
+  intl: ^0.20.2
+  provider: ^6.1.5+1
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/translations/
+    - assets/images/countryflags/
+    - assets/lottie/
+    - .env
+
+  fonts:
+    - family: Lexend
+      fonts:
+        - asset: assets/fonts/Lexend-Black.ttf
+        - asset: assets/fonts/Lexend-Bold.ttf
+        - asset: assets/fonts/Lexend-Medium.ttf
+        - asset: assets/fonts/Lexend-Regular.ttf
+        - asset: assets/fonts/Lexend-SemiBold.ttf
+        - asset: assets/fonts/Lexend-Thin.ttf
+        - asset: assets/fonts/Lexend-ExtraBold.ttf
+        - asset: assets/fonts/Lexend-ExtraLight.ttf
+        - asset: assets/fonts/Lexend-Light.ttf
