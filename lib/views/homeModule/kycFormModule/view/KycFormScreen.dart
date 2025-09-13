@@ -9,7 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:esimtel/core/bloc/api_state.dart';
-import 'package:esimtel/utills/appColors.dart';
+import 'package:esimtel/utills/appcolors.dart';
 import '../../../profileMoulde/userProfileModule/profile_bloc/userprofile_bloc.dart';
 import '../../../profileMoulde/userProfileModule/profile_bloc/userprofile_event.dart';
 import '../kycform_bloc/kyc_form_bloc.dart';

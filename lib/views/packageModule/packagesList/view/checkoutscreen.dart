@@ -5,7 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:esimtel/utills/paymentUtils/RazorpayService.dart';
 import 'package:esimtel/utills/paymentUtils/StripeService.dart';
 import 'package:esimtel/utills/UserService.dart';
-import 'package:esimtel/utills/appColors.dart';
+import 'package:esimtel/utills/appcolors.dart';
 import 'package:esimtel/utills/paymentUtils/cashfreeservice.dart';
 import 'package:esimtel/views/packageModule/packagesList/bloc/order_bloc/order_now_bloc.dart';
 import 'package:esimtel/views/packageModule/packagesList/model/ordernowModel.dart';

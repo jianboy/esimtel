@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:esimtel/core/bloc/api_state.dart';
-import 'package:esimtel/utills/appColors.dart';
+import 'package:esimtel/utills/appcolors.dart';
 import 'package:esimtel/views/homeModule/getUsageModule/views/countryCard.dart';
 import 'package:esimtel/views/navbarModule/bloc/navbar_bloc.dart';
 import 'package:esimtel/views/packageModule/packagesList/controller/packagelistcontorller.dart';

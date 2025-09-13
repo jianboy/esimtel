@@ -1,4 +1,4 @@
-import 'package:esimtel/utills/appColors.dart';
+import 'package:esimtel/utills/appcolors.dart';
 import 'package:esimtel/utills/image.dart';
 import 'package:esimtel/views/authModule/view/loginScreen.dart';
 import 'package:esimtel/views/onBoardModule/controller/onboardController.dart';

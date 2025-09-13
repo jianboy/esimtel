@@ -6,7 +6,7 @@ import 'package:sizer/sizer.dart';
 import 'package:esimtel/utills/appcolors.dart';
 import 'package:esimtel/utills/global.dart' as global;
 import 'package:esimtel/utills/image.dart';
-import 'package:esimtel/widgets/customElevatedButton.dart';
+import 'package:esimtel/widgets/CustomElevatedButton.dart';
 
 class ReferAndEarnScreen extends StatefulWidget {
   const ReferAndEarnScreen({super.key});

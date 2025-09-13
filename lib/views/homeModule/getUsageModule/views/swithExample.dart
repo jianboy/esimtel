@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:esimtel/core/bloc/api_state.dart';
-import 'package:esimtel/utills/appColors.dart';
+import 'package:esimtel/utills/appcolors.dart';
 import 'package:esimtel/utills/global.dart';
 import 'package:esimtel/utills/image.dart';
 import 'package:esimtel/views/homeModule/controller/homeController.dart';

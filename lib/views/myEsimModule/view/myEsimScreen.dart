@@ -10,7 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart' hide Transition;
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:esimtel/core/bloc/api_state.dart';
-import 'package:esimtel/utills/appColors.dart';
+import 'package:esimtel/utills/appcolors.dart';
 import 'package:esimtel/utills/image.dart';
 import 'package:esimtel/views/myEsimModule/model/EsimListModel.dart';
 import 'package:esimtel/views/myEsimModule/myesimbloc/fetch_esim_list_bloc.dart';

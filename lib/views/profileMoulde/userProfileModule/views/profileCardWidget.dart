@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:esimtel/utills/appColors.dart';
+import 'package:esimtel/utills/appcolors.dart';
 import 'package:esimtel/utills/config.dart';
 import 'package:esimtel/utills/global.dart';
 import 'package:esimtel/utills/image.dart';

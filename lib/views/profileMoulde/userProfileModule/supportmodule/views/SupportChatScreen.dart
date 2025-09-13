@@ -1,5 +1,5 @@
 import 'package:esimtel/core/bloc/api_state.dart';
-import 'package:esimtel/utills/appColors.dart';
+import 'package:esimtel/utills/appcolors.dart';
 import 'package:esimtel/utills/global.dart' as global;
 import 'package:esimtel/views/profileMoulde/userProfileModule/supportmodule/bloc/raiseticket_bloc/raiseticket_bloc.dart';
 import 'package:esimtel/views/profileMoulde/userProfileModule/supportmodule/bloc/raiseticket_bloc/raiseticket_event.dart';

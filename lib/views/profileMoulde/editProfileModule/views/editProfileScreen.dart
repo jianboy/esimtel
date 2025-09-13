@@ -17,7 +17,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 import 'package:esimtel/core/bloc/api_state.dart';
-import 'package:esimtel/utills/appColors.dart';
+import 'package:esimtel/utills/appcolors.dart';
 import 'package:esimtel/utills/image.dart';
 import 'package:esimtel/views/profileMoulde/editProfileModule/bloc/getCurrency_bloc/getCurrency_bloc.dart';
 import 'package:esimtel/views/profileMoulde/editProfileModule/model/getCurrencyModel.dart';

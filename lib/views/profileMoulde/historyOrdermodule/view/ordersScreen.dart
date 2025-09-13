@@ -1,4 +1,4 @@
-import 'package:esimtel/utills/appColors.dart';
+import 'package:esimtel/utills/appcolors.dart';
 import 'package:esimtel/utills/image.dart';
 import 'package:esimtel/widgets/loadingListSkeletion.dart';
 import 'package:easy_localization/easy_localization.dart';
