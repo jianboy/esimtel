@@ -50,6 +50,13 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: flutter pub get
 
+      - name: Install iOS Dependencies
+        if: ${{  runner.os == 'macOS' }}
+        run: |
+          cd ios
+          pod install --repo-update
+          cd ..
+
       - name: Build apk
         if: ${{ runner.os == 'Linux' }}
         run: |
