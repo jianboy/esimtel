@@ -102,7 +102,11 @@ jobs:
             build/ios/**/*.ipa
             build/web/web-app.zip
 
-        
+      - name: Setup tmate session
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 15
+
       # - name: Deploy iOS Beta to TestFlight via Fastlane
       #     uses: maierj/fastlane-action@v2.0.1
       #     with:
