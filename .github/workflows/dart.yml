@@ -1,0 +1,123 @@
+name: CI
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+jobs:
+  build:
+    strategy:
+      matrix:
+        # os: [ubuntu-latest]
+        os: [ macos-latest]
+    runs-on: ${{matrix.os}}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: "17"
+
+      # - name: Setup gradle
+      #   uses: eskatos/gradle-command-action@v1
+      #   with:
+      #     gradle-version: 6.5
+
+      - name: Flutter action
+        uses: subosito/flutter-action@v1.5.3
+        with:
+          channel: "stable"
+          flutter-version: "3.35.3"
+      
+      - name: Cache Dependencies
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            Pods
+          key: |
+            ${{runner.OS}}-gradle-caches-${{ hashFiles('pubspec.lock') }}
+            ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+            ${{ runner.os }}-gradle-
+
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: flutter pub get
+
+      - name: Build apk
+        if: ${{ runner.os == 'Linux' }}
+        run: |
+          flutter clean
+          flutter build apk --release --split-per-abi
+
+      # - name: Build Web
+      #   if: ${{runner.os == 'Linux'}}
+      #   run: |
+      #     flutter build web
+      #     cd build/web
+      #     zip -r web-app.zip .
+
+      - name: Build ios
+        if: ${{ runner.os == 'macOS' }}
+        run: |
+          sudo xcode-select -s /Applications/Xcode_12.3.app
+          flutter build ios --release --no-codesign
+          cd build/ios/iphoneos
+          mkdir Payload
+          cd Payload
+          ln -s ../Runner.app
+          cd ..
+          zip -r app.ipa Payload
+      
+      # - name: Build exe
+      #   if: ${{ runner.os == 'Windows'}}
+      #   run: |
+      #     flutter build windows
+
+      # - name: Build mac
+      #   if: ${{ runner.os == 'macOS'}}
+      #   run: |
+      #     flutter build macos
+
+      # output some file:
+      - name: artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{runner.OS}}-artifact
+          path: |
+            build/app/outputs/flutter-apk/**/*.apk
+            build/ios/**/*.ipa
+            build/web/web-app.zip
+
+        
+      # - name: Deploy iOS Beta to TestFlight via Fastlane
+      #     uses: maierj/fastlane-action@v2.0.1
+      #     with:
+      #       lane: beta
+      #       subdirectory: ios
+      #     env:
+      #       APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
+      #       DEVELOPER_APP_ID: '${{ secrets.DEVELOPER_APP_ID }}'
+      #       DEVELOPER_APP_IDENTIFIER: '${{ secrets.DEVELOPER_APP_IDENTIFIER }}'
+      #       DEVELOPER_PORTAL_TEAM_ID: '${{ secrets.DEVELOPER_PORTAL_TEAM_ID }}'
+      #       FASTLANE_APPLE_ID: '${{ secrets.FASTLANE_APPLE_ID }}'
+      #       FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: '${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}'
+      #       MATCH_PASSWORD: '${{ secrets.MATCH_PASSWORD }}'
+      #       GIT_AUTHORIZATION: '${{ secrets.GIT_AUTHORIZATION }}'
+      #       PROVISIONING_PROFILE_SPECIFIER: '${{ secrets.PROVISIONING_PROFILE_SPECIFIER }}'
+      #       TEMP_KEYCHAIN_PASSWORD: '${{ secrets.TEMP_KEYCHAIN_PASSWORD }}'
+      #       TEMP_KEYCHAIN_USER: '${{ secrets.TEMP_KEYCHAIN_USER }}'
+      
+      # - name: Release Apps
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     tag: ${{ env.APP_VERSION }}
+      #     name: ${{ env.APP_VERSION }}
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     artifacts: 'build/app/outputs/apk/release/*.apk,build/ios/iphoneos/app.ipa,build/web/web-app.zip'
